@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PawPatrol - Your Pet Care AI Assistant</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <style>
+        :root {
+            --neon-purple: #b624ff;
+            --neon-blue: #24a7ff;
+            --dark-bg: #0a0a0f;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--dark-bg);
+            color: #fff;
+        }
+        .cyberpunk-title {
+            font-family: 'Orbitron', sans-serif;
+        }
+        .neon-border {
+            border: 2px solid var(--neon-purple);
+            box-shadow: 0 0 10px var(--neon-purple);
+        }
+        .neon-text {
+            text-shadow: 0 0 5px var(--neon-purple);
+        }
+        .gradient-bg {
+            background: linear-gradient(45deg, #1a1a2e, #16213e);
+        }
+        .hover-glow:hover {
+            box-shadow: 0 0 15px var(--neon-blue);
+            transform: translateY(-2px);
+            transition: all 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+    <div class="min-h-screen">
+        <!-- Navigation -->
+        <nav class="gradient-bg sticky top-0 z-50 p-4">
+            <div class="container mx-auto flex flex-wrap justify-between items-center">
+                <h1 class="cyberpunk-title text-2xl font-bold text-[var(--neon-purple)]">PawPatrol</h1>
+                <div class="space-x-4 flex flex-wrap">
+                    <button class="neon-border px-4 py-2 rounded hover-glow">Pet Care</button>
+                    <button class="neon-border px-4 py-2 rounded hover-glow">Vet Connect</button>
+                    <button class="neon-border px-4 py-2 rounded hover-glow">Adoption</button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <div class="container mx-auto px-4 py-12">
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div>
+                    <h2 class="cyberpunk-title text-4xl mb-6 neon-text">AI-Powered Pet Healthcare</h2>
+                    <p class="text-gray-300 mb-8">Connecting pet parents with veterinarians through advanced AI technology. Get instant support, schedule video consultations, and access comprehensive pet care resources.</p>
+                    <div class="flex gap-4">
+                        <button class="bg-[var(--neon-purple)] px-6 py-3 rounded-lg hover-glow">Book Consultation</button>
+                        <button class="neon-border px-6 py-3 rounded-lg hover-glow">Emergency Care</button>
+                    </div>
+                </div>
+                <div class="neon-border p-6 rounded-lg">
+                    <img src="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e" alt="Veterinary Care" class="rounded-lg w-full">
+                </div>
+            </div>
+        </div>
+
+        <!-- Statistics Section -->
+        <div class="gradient-bg py-12">
+            <div class="container mx-auto px-4">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+                    <div class="p-4">
+                        <p class="text-3xl font-bold text-[var(--neon-blue)]">10M+</p>
+                        <p class="text-gray-400">Pets Helped</p>
+                    </div>
+                    <div class="p-4">
+                        <p class="text-3xl font-bold text-[var(--neon-blue)]">5,000+</p>
+                        <p class="text-gray-400">Verified Vets</p>
+                    </div>
+                    <div class="p-4">
+                        <p class="text-3xl font-bold text-[var(--neon-blue)]">24/7</p>
+                        <p class="text-gray-400">Support</p>
+                    </div>
+                    <div class="p-4">
+                        <p class="text-3xl font-bold text-[var(--neon-blue)]">98%</p>
+                        <p class="text-gray-400">Success Rate</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Services Section -->
+        <div class="container mx-auto px-4 py-12">
+            <h2 class="cyberpunk-title text-3xl mb-8 neon-text text-center">Our Services</h2>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="neon-border p-6 rounded-lg gradient-bg">
+                    <i class="bi bi-camera-video-fill text-3xl text-[var(--neon-purple)]"></i>
+                    <h3 class="text-xl font-bold mt-4">Video Consultations</h3>
+                    <p class="text-gray-400 mt-2">Connect with certified veterinarians instantly through secure video calls.</p>
+                </div>
+                <div class="neon-border p-6 rounded-lg gradient-bg">
+                    <i class="bi bi-heart-pulse-fill text-3xl text-[var(--neon-purple)]"></i>
+                    <h3 class="text-xl font-bold mt-4">Emergency Care</h3>
+                    <p class="text-gray-400 mt-2">24/7 emergency support and guidance for critical situations.</p>
+                </div>
+                <div class="neon-border p-6 rounded-lg gradient-bg">
+                    <i class="bi bi-book-fill text-3xl text-[var(--neon-purple)]"></i>
+                    <h3 class="text-xl font-bold mt-4">Pet Education</h3>
+                    <p class="text-gray-400 mt-2">Comprehensive resources for pet care, training, and nutrition.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- AI Assistant -->
+        <div class="fixed bottom-4 right-4">
+            <button onclick="toggleChat()" class="bg-[var(--neon-purple)] p-4 rounded-full hover-glow">
+                <i class="bi bi-robot text-2xl"></i>
+            </button>
+            <div id="chatWindow" class="hidden neon-border p-4 rounded-lg gradient-bg w-80 absolute bottom-16 right-0">
+                <div class="flex justify-between items-center mb-4">
+                    <h3 class="cyberpunk-title">PawBot Assistant</h3>
+                    <button onclick="toggleChat()" class="text-gray-400 hover:text-white">
+                        <i class="bi bi-x-lg"></i>
+                    </button>
+                </div>
+                <div id="chatMessages" class="h-64 overflow-y-auto mb-4 space-y-2"></div>
+                <div class="flex gap-2">
+                    <input type="text" id="userMessage" placeholder="Ask about pet care..." class="w-full bg-black/50 border border-[var(--neon-purple)] rounded p-2">
+                    <button onclick="sendMessage()" class="bg-[var(--neon-purple)] px-4 rounded hover-glow">
+                        <i class="bi bi-send"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleChat() {
+            const chatWindow = document.getElementById('chatWindow');
+            chatWindow.classList.toggle('hidden');
+        }
+
+        function sendMessage() {
+            const input = document.getElementById('userMessage');
+            const messages = document.getElementById('chatMessages');
+            
+            if (!input.value.trim()) return;
+
+            // Add user message
+            const userDiv = document.createElement('div');
+            userDiv.className = 'bg-[var(--neon-purple)]/20 p-2 rounded';
+            userDiv.textContent = input.value;
+            messages.appendChild(userDiv);
+
+            // Simulate AI response
+            setTimeout(() => {
+                const responses = [
+                    "I can help you schedule a vet consultation.",
+                    "Here are some tips for pet nutrition...",
+                    "Would you like to learn more about pet training?",
+                    "I can provide emergency care guidance if needed."
+                ];
+                const aiDiv = document.createElement('div');
+                aiDiv.className = 'bg-[var(--neon-blue)]/20 p-2 rounded';
+                aiDiv.textContent = responses[Math.floor(Math.random() * responses.length)];
+                messages.appendChild(aiDiv);
+                messages.scrollTop = messages.scrollHeight;
+            }, 1000);
+
+            input.value = '';
+            messages.scrollTop = messages.scrollHeight;
+        }
+    </script>
+<script>document.body.addEventListener('wheel', e => { if (!e.ctrlKey) return; e.preventDefault(); return }, { passive: false })</script>
+	</body>
+</html>
